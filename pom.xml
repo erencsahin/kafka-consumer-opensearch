@@ -6,10 +6,17 @@
 	<parent>
 		<groupId>com.erencsahin</groupId>
 		<artifactId>toyotaproject</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-
 	<artifactId>kafka-consumer-opensearch</artifactId>
+	<name>kafka-consumer-opensearch</name>
+	<packaging>jar</packaging>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
 	<dependencies>
 		<!-- Spring Boot -->
 		<dependency>
@@ -43,6 +50,12 @@
 			<optional>true</optional>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -65,18 +78,13 @@
 	</dependencies>
 
 
-
-
-
-
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.erencsahin.rest.RestApplication</mainClass>
+					<mainClass>com.erencsahin.kafkaconsumeropensearch.KafkaConsumerOpensearchApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>
